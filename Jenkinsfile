@@ -10,11 +10,11 @@ pipeline {
             stage('EB CREATE') {
                 steps {
                         withAWS(credentials: 'ruben-aws-credentials') {
-                                sh 'cd /home/sinensia/hello-eb'
-                                sh 'eb create eb-devops-rubenvl_${BUILD_NUMBER}' 
-                            }
+                                dir("eb-devops-ruben") {
+                                    sh 'eb deploy' 
+                                }       
                         }
-
                 }
             }
-    }                 
+    }
+}                 
