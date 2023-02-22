@@ -11,7 +11,7 @@ pipeline {
                 steps {
                         withAWS(credentials: 'ruben-aws-credentials') {
                                 dir("eb-devops-ruben") {
-                                    echo 'hola'
+                                    echo 'hola probando notificaciones'
                                    
                                 }       
                         }
